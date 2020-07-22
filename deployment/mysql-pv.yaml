@@ -1,27 +1,28 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mysql-volume
+  name: mysql-volume-davulv
   namespace: davulv
   labels:
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: mysql-davulv
   capacity:
-    storage: 2Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/mnt/data"
+    path: "/mnt/data-davulv"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-volume-claim
+  name: mysql-volume-claim-davulv
+  namespace: davulv
 spec:
-  storageClassName: manual
+  storageClassName: mysql-davulv
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 2Gi
+      storage: 1Gi

@@ -15,5 +15,3 @@ spec:
     app: pages
     servicefor: pages
   type: LoadBalancer
-status:
-  loadBalancer: {}
